@@ -17,7 +17,7 @@ export class AccountsService {
         "SDA6DSYRY6P3JIVRA74YD37EXIBMM5FAYCIGXRSWARON6YMWHJSNU3TLDY",
         "JY2FRXQP7Q6SYH7QE2HF2XWNE644V6KUH3PYC4SYWPUSEATTDJSNUHMHR4"
     ];
-    private accountsState: accountsState = {};
+    public accountsState: accountsState = {};
     private intervalId: any;
 
     // Initializes state with existing accounts from file 

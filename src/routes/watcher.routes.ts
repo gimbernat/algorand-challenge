@@ -1,21 +1,19 @@
 import * as express from "express";
 import { AccountsService } from "../services/acounts.service";
+import { validateAccountAddress } from "../middleware/validateAccountAddress";
 
 const router = express.Router();
 const accountsService = new AccountsService();
 
-
 router.get('/account-watcher/', async (req, res) => {
   try {
     const response = await accountsService.checkAccountsStates()
-    console.log("response " ,response)
     res.status(200).json(response);
   } catch (error) {
     res.status(500).json({ success: false, error: error });
   }
 });
-
-router.post('/account-watcher/add/:address', async (req, res) => {
+router.post('/account-watcher/add/:address', validateAccountAddress, async (req, res) => {
   try {
     const address = req.params.address;
     accountsService.addAccount(address);
@@ -24,9 +22,8 @@ router.post('/account-watcher/add/:address', async (req, res) => {
     res.status(500).json({ success: false, error: error });
   }
 });
-
 // Route for removing an account
-router.delete('/account-watcher/remove/:address', async (req, res) => {
+router.delete('/account-watcher/remove/:address', validateAccountAddress, async (req, res) => {
   try {
     const address = req.params.address;
     accountsService.removeAccount(address);

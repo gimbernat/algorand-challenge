@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import { AccountsService } from "../services/acounts.service";
 
 export function validateAccountAddress(
   req: Request,
@@ -6,7 +7,7 @@ export function validateAccountAddress(
   next: NextFunction
 ) {
   const address = req.params.address;
-  const isValidAddress = /^[A-Za-z0-9]{52}$/.test(address);
+  const isValidAddress = address.length > 57
 
   if (isValidAddress) {
     next();
