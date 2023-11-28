@@ -4,14 +4,22 @@ import { sendWsMessage } from "../utils/webSocket";
 interface accountsState {
     [key: string]: any;
 }
+// TODO: REMOVE AND  WRITE TO JSON FILE FOR "PERSISTENCE"  
+const defaultAccounts = [
+    "OM6MRCKILRNNBYSSM3NHOQVRCX4EKF3YMA4EKHIGYWAV553Y57ZO2B7EFM",
+    "IVBHJFHZWPXRX2EA7AH7Y4UTTBO2AK73XI65OIXDEAEN7VO2IHWXKOKOVM",
+    "KWNBRP4E6X7POFIPCDNX5NZBY2YHW4RRH67RBWRCII5BZVZ5NLTGCBANUU",
+    "7O3IVAXXX645ZDKBOJIRXW7ULW4B77KK4B5KGVRIIYR3CTK2U5KRLLXWFQ",
+    "SDA6DSYRY6P3JIVRA74YD37EXIBMM5FAYCIGXRSWARON6YMWHJSNU3TLDY",
+    "JY2FRXQP7Q6SYH7QE2HF2XWNE644V6KUH3PYC4SYWPUSEATTDJSNUHMHR4"
+]
 
 export class AccountsService {
     private static instance: AccountsService;
-    public accounts: string[] = [
-
+    public accounts: string[] = [...defaultAccounts
     ];
     private accountsState: accountsState = {};
-    private intervalId: any;
+    private intervalId: NodeJS.Timeout | null;
 
     private constructor() {
         const initialAccounts = this.accounts;
