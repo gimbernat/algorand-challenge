@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { AccountsService } from "../services/acounts.service";
+import { AccountsService } from "../services/accounts.service";
 
 export function validateAccountAddress(
   req: Request,

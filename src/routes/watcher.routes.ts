@@ -1,5 +1,5 @@
 import * as express from "express";
-import { AccountsService } from "../services/acounts.service";
+import { AccountsService } from "../services/accounts.service";
 import { validateAccountAddress } from "../middleware/validateAccountAddress";
 
 const router = express.Router();
