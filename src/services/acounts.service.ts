@@ -1,14 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { fetchData } from "../utils/fetchData";
 import { sendWsMessage } from "../utils/webSocket";
-
 
 interface accountsState {
     [key: string]: any;
 }
 
 export class AccountsService {
+    private static instance: AccountsService;
     private accounts: string[] = [
         "OM6MRCKILRNNBYSSM3NHOQVRCX4EKF3YMA4EKHIGYWAV553Y57ZO2B7EFM",
         "IVBHJFHZWPXRX2EA7AH7Y4UTTBO2AK73XI65OIXDEAEN7VO2IHWXKOKOVM",
@@ -20,15 +18,21 @@ export class AccountsService {
     public accountsState: accountsState = {};
     private intervalId: any;
 
-    // Initializes state with existing accounts from file 
-    constructor() {
-        const initialAccounts = this.accounts
+    private constructor() {
+        const initialAccounts = this.accounts;
         initialAccounts.forEach(account => {
             this.accountsState[account] = {};
         });
         this.intervalId = setInterval(() => {
             this.checkAccountsStates();
-        }, 30000);
+        }, 60000);
+    }
+
+    public static getInstance(): AccountsService {
+        if (!AccountsService.instance) {
+            AccountsService.instance = new AccountsService();
+        }
+        return AccountsService.instance;
     }
 
     stopCheckingAccounts() {
@@ -77,7 +81,7 @@ export class AccountsService {
             this.accounts.push(address);
             console.log(`Account ${address} added to watcher list`);
         }
-        this.checkAccountsStates()
+        this.checkAccountsStates();
     }
 
     removeAccount(address: string): void {
@@ -87,12 +91,10 @@ export class AccountsService {
             delete this.accountsState[address];
             console.log(`Account ${address} removed from watcher list`);
         }
-        this.checkAccountsStates()
+        this.checkAccountsStates();
     }
 
     getCurrentaccountsState = async () => {
-        return this.accountsState
+        return this.accountsState;
     };
-
-
 }

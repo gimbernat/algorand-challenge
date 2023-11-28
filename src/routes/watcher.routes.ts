@@ -3,7 +3,8 @@ import { AccountsService } from "../services/acounts.service";
 import { validateAccountAddress } from "../middleware/validateAccountAddress";
 
 const router = express.Router();
-const accountsService = new AccountsService();
+const accountsService = AccountsService.getInstance();
+
 
 router.get('/account-watcher/', async (req, res) => {
   try {
