@@ -4,7 +4,7 @@ import cors from "cors";
 import WebSocket, { WebSocketServer } from 'ws';
 import watcherRoutes from "./routes/watcher.routes";
 
-const app = express();
+export const app = express();
 const port = 8000;
 
 const allowedOrigins = ["http://localhost:3000"];

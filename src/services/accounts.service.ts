@@ -15,7 +15,7 @@ export class AccountsService {
         "SDA6DSYRY6P3JIVRA74YD37EXIBMM5FAYCIGXRSWARON6YMWHJSNU3TLDY",
         "JY2FRXQP7Q6SYH7QE2HF2XWNE644V6KUH3PYC4SYWPUSEATTDJSNUHMHR4"
     ];
-    public accountsState: accountsState = {};
+    private accountsState: accountsState = {};
     private intervalId: any;
 
     private constructor() {
