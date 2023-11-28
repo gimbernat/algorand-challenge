@@ -7,7 +7,7 @@ interface accountsState {
 
 export class AccountsService {
     private static instance: AccountsService;
-    private accounts: string[] = [
+    public accounts: string[] = [
         "OM6MRCKILRNNBYSSM3NHOQVRCX4EKF3YMA4EKHIGYWAV553Y57ZO2B7EFM",
         "IVBHJFHZWPXRX2EA7AH7Y4UTTBO2AK73XI65OIXDEAEN7VO2IHWXKOKOVM",
         "KWNBRP4E6X7POFIPCDNX5NZBY2YHW4RRH67RBWRCII5BZVZ5NLTGCBANUU",

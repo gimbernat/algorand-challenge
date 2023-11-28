@@ -24,7 +24,7 @@ router.post('/account-watcher/add/:address', validateAccountAddress, async (req,
   }
 });
 // Route for removing an account
-router.delete('/account-watcher/remove/:address', validateAccountAddress, async (req, res) => {
+router.delete('/account-watcher/remove/:address', async (req, res) => {
   try {
     const address = req.params.address;
     accountsService.removeAccount(address);

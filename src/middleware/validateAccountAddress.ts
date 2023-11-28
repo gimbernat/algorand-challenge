@@ -7,11 +7,13 @@ export function validateAccountAddress(
   next: NextFunction
 ) {
   const address = req.params.address;
-  const isValidAddress = address.length > 57
+  const accountsService = AccountsService.getInstance();
+
+  const isValidAddress = address.length > 57 && !accountsService.accounts.includes(address);
 
   if (isValidAddress) {
     next();
   } else {
-    res.status(400).send("Invalid account address");
+    res.status(400).send("Account already Exists or is Invalid");
   }
 }
