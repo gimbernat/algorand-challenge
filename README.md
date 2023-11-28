@@ -1,12 +1,3 @@
-# algorand-challenge
-
-### Frontend
-
-```jsx
-npm install 
-npm run dev
-```
-
 ### Docker
 
 ```jsx
@@ -18,6 +9,14 @@ docker run -p 8000:8000 algorand-challenge
 
 ```jsx
 npm run test 
+```
+
+### Frontend 
+https://github.com/gimbernat/algorand-challenge-frontend
+
+```jsx
+npm install 
+npm run dev
 ```
 
 ### Endpoints
