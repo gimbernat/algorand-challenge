@@ -14,10 +14,6 @@ npm run test
 ### Frontend 
 https://github.com/gimbernat/algorand-challenge-frontend
 
-```jsx
-npm install 
-npm run dev
-```
 
 ### Endpoints
 
