@@ -11,9 +11,6 @@ docker run -p 8000:8000 algorand-challenge
 npm run test 
 ```
 
-### Frontend 
-https://github.com/gimbernat/algorand-challenge-frontend
-<img width="1375" alt="image" src="https://github.com/gimbernat/algorand-challenge/assets/58195660/7b1dba0d-9ba8-41bd-8837-e651fc4d9f65">
 
 
 ### Endpoints
@@ -39,6 +36,9 @@ https://github.com/gimbernat/algorand-challenge-frontend
 - **URL:** **`http://localhost:8000/account-watcher/remove/0x12345`**
 
 
+### Frontend 
+https://github.com/gimbernat/algorand-challenge-frontend
+<img width="1375" alt="image" src="https://github.com/gimbernat/algorand-challenge/assets/58195660/7b1dba0d-9ba8-41bd-8837-e651fc4d9f65">
 
 
 
