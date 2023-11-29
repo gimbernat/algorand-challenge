@@ -25,14 +25,14 @@ https://github.com/gimbernat/algorand-challenge-frontend
 
 - **Endpoint:** **`GET /account-watcher/`**
 - **Description:** Check the states of all accounts.
-- **URL:** **`http://localhost:8000/api/account-watcher/`**
+- **URL:** **`http://localhost:8000/account-watcher/`**
 
 ### **2. Add an Account to Watch (POST)**
 
 - **Endpoint:** **`POST /account-watcher/add/:address`**
-- **URL:** **`http://localhost:8000/api/account-watcher/add/0x12345`**
+- **URL:** **`http://localhost:8000/account-watcher/add/0x12345`**
 
 ### **3. Remove an Account from Watch (DELETE)**
 
 - **Endpoint:** **`DELETE /account-watcher/remove/:address`**
-- **URL:** **`http://localhost:8000/api/account-watcher/remove/0x12345`**
+- **URL:** **`http://localhost:8000/account-watcher/remove/0x12345`**
