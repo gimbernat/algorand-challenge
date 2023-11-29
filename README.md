@@ -36,25 +36,19 @@ npm run test
 - **URL:** **`http://localhost:8000/account-watcher/remove/0x12345`**
 
 
+### How it Works 
+- **REST API**: Manages a list of Algorand accounts to watch (in-memory). It supports adding and removing accounts from the watcher list.
+- **Periodic Checking**: Every 60 seconds, the backend checks the balance of each watched account for any changes since the last update.
+- **WebSocket Server**: Uses WebSockets to push real-time balance updates to the frontend when a change is detected.
+
+
+
+
 ### Frontend 
 https://github.com/gimbernat/algorand-challenge-frontend
 <img width="1375" alt="image" src="https://github.com/gimbernat/algorand-challenge/assets/58195660/7b1dba0d-9ba8-41bd-8837-e651fc4d9f65">
-
-
-
-
-
-
-
-### How the App Works 
-- **REST API**: Manages a list of Algorand accounts to watch. It supports adding and removing accounts from the watcher list.
-- **Periodic Checking**: Every 60 seconds, the backend checks the balance of each watched account for any changes since the last update.
-- **WebSocket Server**: Utilizes WebSockets to push real-time balance updates to the frontend when a change is detected.
-
-### **Frontend**
-
 - **Real-Time Price Updates**: Connects to the backend via WebSockets to receive and display live balance updates.
--  Allows users to add new Algorand accounts to the watcher list and view their current balances.
+-  Allows users to add and remove Algorand accounts to the watcher list and view their current balances.
 
 ## **WebSockets**
 
